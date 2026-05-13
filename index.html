@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Pro - Frank</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f0f2f5; color: #333; }
+        .controles { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 30px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        input, select { padding: 10px; border: 1px solid #ddd; border-radius: 6px; flex: 1; min-width: 200px; }
+        #contenedor-productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .producto { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .producto:hover { transform: translateY(-5px); }
+        .producto img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; }
+        .categoria-tag { display: inline-block; background: #e3f2fd; color: #1976d2; padding: 4px 8px; border-radius: 4px; font-size: 0.8em; margin-top: 10px; }
+        .paginacion { margin-top: 30px; display: flex; gap: 10px; justify-content: center; align-items: center; }
+        button { padding: 10px 20px; cursor: pointer; border: none; background: #2563eb; color: white; border-radius: 6px; font-weight: 600; }
+        button:disabled { background: #cbd5e1; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <h1>Explorar Productos</h1>
+    
+    <div class="controles">
+        <input type="text" id="buscador" placeholder="Buscar productos por nombre...">
+        <select id="filtro-categoria">
+            <option value="">Todas las categorías</option>
+            <!-- Las categorías se cargarán aquí -->
+        </select>
+    </div>
+
+    <div id="contenedor-productos"></div>
+
+    <div class="paginacion" id="seccion-paginacion">
+        <button id="btn-anterior">Anterior</button>
+        <span id="info-pagina">Página 1</span>
+        <button id="btn-siguiente">Siguiente</button>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
